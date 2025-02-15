@@ -12,15 +12,17 @@ def main():
     cell2.draw()
 
     cell3 = Cell(win, 300, 100, 400, 200)
-    cell3.has_top_wall = False
-    cell3.has_bottom_wall = False
+    cell3.has_left_wall = False
+    cell3.has_right_wall = False
     cell3.draw()
     
     cell4 = Cell(win, 400, 100, 500, 200)
     cell4.has_left_wall = False
-    cell4.has_right_wall = False
     cell4.draw()
     
+    move1 = cell2.draw_move(cell4)
+    move1_undone = cell2.draw_move(cell4, undo=True)
+
     win.wait_for_close()
 
 if __name__ == '__main__':
